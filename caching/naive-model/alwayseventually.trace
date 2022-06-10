@@ -1,0 +1,47 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ database |-> (k1 :> 0)
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "CacheReadThrough",
+   location |-> "line 50, col 5 to line 60, col 25 of module naivecache"
+ ],
+ cache |-> (k1 :> [type |-> "hit", version |-> 0]),
+ database |-> (k1 :> 0)
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "DatabaseUpdate",
+   location |-> "line 37, col 5 to line 39, col 22 of module naivecache"
+ ],
+ cache |-> (k1 :> [type |-> "hit", version |-> 0]),
+ database |-> (k1 :> 1)
+],
+[
+ _TEAction |-> [
+   position |-> 4,
+   name |-> "DatabaseUpdate",
+   location |-> "line 37, col 5 to line 39, col 22 of module naivecache"
+ ],
+ cache |-> (k1 :> [type |-> "hit", version |-> 0]),
+ database |-> (k1 :> 2)
+],
+[
+ _TEAction |-> [
+   position |-> 5,
+   name |-> "DatabaseUpdate",
+   location |-> "line 37, col 5 to line 39, col 22 of module naivecache"
+ ],
+ cache |-> (k1 :> [type |-> "hit", version |-> 0]),
+ database |-> (k1 :> 3)
+]
+>>

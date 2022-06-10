@@ -1,0 +1,183 @@
+{% assign namespace = include.model | replace: "/" "" %}
+| <a href="#{{namespace}}-end">Next Section</a> | {% if include.model %} <a href="{{include.model}}">Download Model</a> |{% endif %} {% if include.modelcfg %} <a href="{{include.modelcfg}}">Download Configuration</a> |{% endif %}
+
+<strong class="constraint">{{include.constraint}}</strong>
+<div class="trace">
+    {% assign stateno = 0 %}
+    <ul class="sublevel-0 {{include.traceconfig.align}}" data-accordion-menu>
+        {% for state in include.trace %}
+        {% assign stateno = state.no %}
+        {% assign stateconfig = include.traceconfig[state.no] %}
+        <li onclick="toggle(this)" {% unless stateconfig.open %} class="collapsed" {% endunless %}>
+            
+            <span class="name {{stateconfig.class}}">{{state.no}}. {{state.name}}</span>
+            <span class="note {{stateconfig.note-class}}">{{stateconfig.note}}</span>
+            <ul class="sublevel-1">
+                {% for v in state.state %}
+                {% assign vkey = v[0] %}
+                {% assign varconfig = stateconfig[vkey] %}
+
+                <li onclick="toggle(this)">
+                <span class="name {{varconfig.class}}">{{v[0]}}</span>
+                <span class="note {{varconfig.note-class}}">{{varconfig.note}}</span>
+
+                {% assign v2map=false %}
+                {% for v2 in v[1] %}
+                    {% assign v2mapkey=v2[0] %}
+                    {% if v[1][v2mapkey] == v2[1] and v[1][v2mapkey]%}
+                        {% assign v2map=true %}
+                    {% endif %}
+                {% endfor %}
+                {% assign v2list=false %}
+                {% if v2map == false %}
+                    {% for v2 in v[1] %}
+                        {% assign v2list=true %}
+                    {% endfor %}
+                {% endif %}
+                {% if v2map %}
+                <ul class="sublevel-2">
+                    {% for v2 in v[1] %}
+                    {% assign v2key = v2[0] %}
+                    {% assign var2config = varconfig[v2key] %}
+                    <li>
+                        <span class="name {{var2config.class}}">{{v2[0]}}</span>
+                        
+                        {% assign v3map=false %}
+                        {% for v3 in v2[1] %}
+                            {% assign v3mapkey=v3[0] %}
+                            {% if v2[1][v3mapkey] == v3[1] and v2[1][v3mapkey]%}
+                                {% assign v3map=true %}
+                            {% endif %}
+                        {% endfor %}
+        
+                        {% assign v3list=false %}
+                        {% if v3map == false %}
+                            {% for v3 in v2[1] %}
+                                {% assign v3list=true %}
+                            {% endfor %}
+                        {% endif %}
+        
+                        {% if v3map %}
+                        <span class="note {{var2config.note-class}}">{{var2config.note}}</span>
+                        <ul>
+                            {% for v3 in v2[1] %}
+                            <li onclick="toggle(this)">
+                                <span class="name">{{v3[0]}}:</span>
+                                <span class="value">{{v3[1]}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+                        {% if v3list %}
+                        <ol>
+                            {% for v3 in v2[1] %}
+                            <li>
+                                <span class="value">: {{v3}}</span>
+                            </li>
+                            {% endfor %}
+                        </ol>
+                        
+                        {% endif %}
+
+                        {% if v3map == false and v3list == false %}
+                        <span class="value">: {{v2[1]}}</span>
+                        <span class="valnote {{var2config.note-class}}">{{var2config.note}}</span>
+                        {% endif %}
+
+                        
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if v2list %}
+                    {% assign v2empty=true %}
+                <ol class="sublevel-2">
+                    {% for v2 in v[1]%}
+                    {% assign index = forloop.index0 | plus: 1 %}
+                    {% assign varlconfig = varconfig[index] %}
+
+                    {% assign v2empty=false %}
+                    <li class="{{varlconfig.class}}">
+                        <span class="note">{{varlconfig.note}}</span>
+                        {% assign v3map=false %}
+                        {% for v3 in v2 %}
+                            {% assign v3mapkey=v3[0] %}
+                            {% if v2[v3mapkey] == v3[1] and v2[v3mapkey]%}
+                                {% assign v3map=true %}
+                            {% endif %}
+                        {% endfor %}
+        
+                        {% assign v3list=false %}
+                        {% if v3map == false %}
+                            {% for v3 in v2 %}
+                                {% assign v3list=true %}
+                            {% endfor %}
+                        {% endif %}
+        
+                        {% if v3map %}
+                        <ul>
+                            {% for v3 in v2 %}
+                            <li>
+                                <span class="name">{{v3[0]}}</span>
+                                <span class="value">: {{v3[1]}}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if v3list %}
+                        <span class="value">: {{v2}}</span>
+                        {% endif %}
+                        {% if v3map == false and v3list == false %}
+                        <span class="value">: {{v2}}</span>
+                        <span class="valnote {{var2config.note-class}}">{{var2config.note}}</span>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ol>
+
+                {% if v2empty %}
+                <span class="empty">: Empty</span>
+                {% endif %}
+
+                {% endif %}
+
+                {% if v2map == false and v2list == false %}
+                : {{v[1]}}
+                {% endif %}
+
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+    
+        {% endfor %}
+        {% assign stutterconfig = include.traceconfig.stuttering %}
+        {% if stutterconfig.show %}
+        {% assign stutternum = stateno | plus: 1 %}
+        <li>
+            <span class="name {{stutterconfig.class}}">Stuttering</span>
+            <span class="note {{istutterconfig.note-class}}">{{stutterconfig.note}}</span>
+        </li>
+        {% endif %}
+    </ul>
+    
+    
+    
+    <div id="{{namespace}}-end"></div>
+</div>
+
+<script>
+    function toggle(element){
+        if (element.classList.contains("collapsed")){
+            element.classList.remove("collapsed")
+        }
+        else{
+            element.classList.add("collapsed")
+        }
+
+        event.stopPropagation();
+    }
+
+</script>

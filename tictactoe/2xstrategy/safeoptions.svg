@@ -1,0 +1,80 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg" viewBox='0 0 800 400'>
+ <g>
+  <title>Combining Proven Safety With AI in Tic-Tac-Toe</title>
+  <line stroke-width="5" id="svg_6" y2="295" x2="97.5" y1="0" x1="97.5" stroke="#000" fill="none"/>
+  <line stroke-width="5" id="svg_8" y2="295" x2="197.5" y1="0" x1="197.5" stroke="#000" fill="none"/>
+  <line stroke-width="5" id="svg_10" y2="97.5" x2="295" y1="98" x1="0" stroke="#000" fill="none"/>
+  <rect id="svg_16" height="95" width="95" y="0" x="0" stroke-width="0" stroke="#000" fill="#8ef28e">
+    <title>Legal Space</title>
+  </rect>
+  <rect id="svg_18" height="95" width="95" y="100" x="200" stroke-width="0" stroke="#000" fill="#8ef28e">
+    <title>Legal Space</title>
+  </rect>
+  <rect id="svg_20" height="95" width="95" y="0" x="100" stroke-width="0" stroke="#000" fill="#8ef28e">
+    <title>Legal Space</title>
+  </rect>
+  <rect id="svg_21" height="95" width="95" y="0" x="199" stroke-width="0" stroke="#000" fill="#8ef28e">
+    <title>Legal Space</title>
+  </rect>
+  <rect id="svg_22" height="95" width="95" y="200" x="200" stroke-width="0" stroke="#000" fill="#ff0000">
+    <title>Not Legal Space</title>
+  </rect>
+  <rect id="svg_23" height="95" width="95" y="100" x="100" stroke-width="0" stroke="#000" fill="#ff0000">
+    <title>Not Legal Space</title>
+  </rect>
+  <rect id="svg_24" height="95" width="95" y="200" x="100" stroke-width="0" stroke="#000" fill="#8ef28e">
+    <title>Legal Space</title>
+  </rect>
+  <rect id="svg_25" height="95" width="95" y="100" x="0" stroke-width="0" stroke="#000" fill="#8ef28e">
+    <title>Legal Space</title>
+  </rect>
+  <rect id="svg_26" height="95" width="95" y="200" x="0" stroke-width="0" stroke="#000" fill="#8ef28e">
+    <title>Legal Space</title>
+  </rect>
+  <line stroke-width="5" id="svg_27" y2="197.5" x2="295" y1="197.5" x1="0" stroke="#000" fill="none"/>
+  <ellipse ry="25" rx="25" id="svg_14" cy="147.5" cx="150" stroke-width="16" stroke="#000" fill="none">
+    <title>O</title>
+  </ellipse>
+  <g id="svg_15">
+   <title>X</title>
+   <line id="svg_11" y2="272.5" x2="273" y1="222.5" x1="223" stroke-width="16" stroke="#000" fill="none"/>
+   <line id="svg_13" y2="222.5" x2="273" y1="272.5" x1="223" stroke-width="16" stroke="#000" fill="none"/>
+  </g>
+  <rect id="svg_28" height="80" width="80" y="7" x="207" stroke-width="0" stroke="#000" fill="#007fff">
+    <title>Strategy Space</title>
+  </rect>
+  <rect id="svg_29" height="80" width="80" y="206" x="9" stroke-width="0" stroke="#000" fill="#007fff">
+    <title>Strategy Space</title>
+  </rect>
+  <ellipse stroke-dasharray="5,5" ry="25" rx="24" id="svg_30" cy="246" cx="50" stroke-width="3" stroke="#ffff00" fill="#000000">
+    <title>AI Chosen Space</title>
+  </ellipse>
+  <rect id="svg_31" height="293.00001" width="405.99999" y="0.99999" x="337" stroke-width="3" stroke="#000" fill="#ff0000">
+    <title>All Moves</title>
+  </rect>
+  <text xml:space="preserve" text-anchor="start" font-family="Verdana" font-size="24" id="svg_32" y="36" x="358" stroke-width="0" stroke="#ffffff" fill="#ffffff">All Moves</text>
+  <rect id="svg_33" height="218" width="308.00001" y="59" x="370" stroke-width="3" stroke="#000" fill="#8ef28e">
+    <title>Legal Moves</title>
+  </rect>
+  
+  <text xml:space="preserve" text-anchor="start" font-family="Verdana" font-size="24" id="svg_34" y="86" x="378" stroke-width="0" stroke="#000" fill="#000000">Legal Moves</text>
+  <rect id="svg_36" height="121" width="206" y="115" x="398" stroke-width="0" stroke="#000" fill="#007fff">
+    <title>Strategy Moves</title>
+  </rect>
+  <text xml:space="preserve" text-anchor="start" font-family="Verdana" font-size="24" id="svg_37" y="145" x="410" stroke-width="0" stroke="#000" fill="#ffffff">Strategy Moves</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Verdana" font-size="24" id="svg_38" y="353" x="150" stroke-width="0" stroke="#000" fill="#000000">AI Chosen Move:</text>
+  <ellipse stroke-dasharray="5,5" ry="25" rx="24" id="svg_39" cy="191" cx="437" stroke-width="3" stroke="#ffff00" fill="#000000">
+    <title>AI Chosen Space</title>
+  </ellipse>
+  <ellipse stroke-dasharray="5,5" ry="25" rx="24" id="svg_41" cy="45" cx="50" stroke-width="3" stroke="#ffff00" fill="#000000">
+    <title>AI Chosen Space</title>
+  </ellipse>
+  <ellipse stroke-dasharray="5,5" ry="25" rx="24" id="svg_42" cy="192" cx="640" stroke-width="3" stroke="#ffff00" fill="#000000">
+    <title>AI Chosen Space</title>
+  </ellipse>
+  <ellipse stroke-dasharray="5,5" ry="25" rx="24" id="svg_43" cy="347" cx="400" stroke-width="3" stroke="#ffff00" fill="#000000">
+    <title>AI Chosen Space</title>
+  </ellipse>
+ </g>
+
+</svg>

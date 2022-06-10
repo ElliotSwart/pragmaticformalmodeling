@@ -1,0 +1,120 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ blobStoreState |-> (u1 :> "UNSET"),
+ databaseState |-> (u1 :> "UNSET"),
+ operations |-> <<>>,
+ serverStates |-> ( s1 :>
+      [ state |-> "waiting",
+        userId |-> "UNSET",
+        metadata |-> "UNSET",
+        image |-> "UNSET" ] @@
+  s2 :>
+      [ state |-> "waiting",
+        userId |-> "UNSET",
+        metadata |-> "UNSET",
+        image |-> "UNSET" ] )
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "StartWrite",
+   location |-> "line 143, col 5 to line 167, col 50 of module naive"
+ ],
+ blobStoreState |-> (u1 :> "UNSET"),
+ databaseState |-> (u1 :> "UNSET"),
+ operations |-> <<[userId |-> u1, metadata |-> m1, image |-> i1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ state |-> "started_write",
+        userId |-> u1,
+        metadata |-> m1,
+        image |-> i1 ] @@
+  s2 :>
+      [ state |-> "waiting",
+        userId |-> "UNSET",
+        metadata |-> "UNSET",
+        image |-> "UNSET" ] )
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "WriteMetadata",
+   location |-> "line 175, col 5 to line 182, col 47 of module naive"
+ ],
+ blobStoreState |-> (u1 :> "UNSET"),
+ databaseState |-> (u1 :> m1),
+ operations |-> <<[userId |-> u1, metadata |-> m1, image |-> i1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ state |-> "wrote_metadata",
+        userId |-> u1,
+        metadata |-> m1,
+        image |-> i1 ] @@
+  s2 :>
+      [ state |-> "waiting",
+        userId |-> "UNSET",
+        metadata |-> "UNSET",
+        image |-> "UNSET" ] )
+],
+[
+ _TEAction |-> [
+   position |-> 4,
+   name |-> "StartRead",
+   location |-> "line 225, col 5 to line 232, col 27 of module naive"
+ ],
+ blobStoreState |-> (u1 :> "UNSET"),
+ databaseState |-> (u1 :> m1),
+ operations |-> <<[userId |-> u1, metadata |-> m1, image |-> i1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ state |-> "wrote_metadata",
+        userId |-> u1,
+        metadata |-> m1,
+        image |-> i1 ] @@
+  s2 :>
+      [ state |-> "started_read",
+        userId |-> u1,
+        metadata |-> "UNSET",
+        image |-> "UNSET" ] )
+],
+[
+ _TEAction |-> [
+   position |-> 5,
+   name |-> "ReadMetadata",
+   location |-> "line 238, col 5 to line 249, col 27 of module naive"
+ ],
+ blobStoreState |-> (u1 :> "UNSET"),
+ databaseState |-> (u1 :> m1),
+ operations |-> <<[userId |-> u1, metadata |-> m1, image |-> i1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ state |-> "wrote_metadata",
+        userId |-> u1,
+        metadata |-> m1,
+        image |-> i1 ] @@
+  s2 :>
+      [ state |-> "read_metadata",
+        userId |-> u1,
+        metadata |-> m1,
+        image |-> "UNSET" ] )
+],
+[
+ _TEAction |-> [
+   position |-> 6,
+   name |-> "ReadBlobAndReturn",
+   location |-> "line 255, col 5 to line 276, col 50 of module naive"
+ ],
+ blobStoreState |-> (u1 :> "UNSET"),
+ databaseState |-> (u1 :> m1),
+ operations |-> << [userId |-> u1, metadata |-> m1, image |-> i1, type |-> "WRITE"],
+   [userId |-> u1, metadata |-> m1, image |-> "UNSET", type |-> "READ"] >>,
+ serverStates |-> ( s1 :>
+      [ state |-> "wrote_metadata",
+        userId |-> u1,
+        metadata |-> m1,
+        image |-> i1 ] @@
+  s2 :>
+      [state |-> "waiting", userId |-> u1, metadata |-> m1, image |-> "UNSET"] )
+]
+>>

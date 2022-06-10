@@ -1,0 +1,119 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ cacheFillStates |-> (k1 :> [version |-> 0, state |-> "inactive"]),
+ cacheVersions |-> (k1 :> [type |-> "miss"]),
+ counter |-> 0,
+ database |-> (k1 :> 0),
+ invalidationQueue |-> {}
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "CacheStartFillMetadata",
+   location |-> "line 77, col 5 to line 81, col 53 of module facebookcacheinvalidation"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ cacheFillStates |-> (k1 :> [version |-> 0, state |-> "startfillmetadata"]),
+ cacheVersions |-> (k1 :> [type |-> "miss"]),
+ counter |-> 0,
+ database |-> (k1 :> 0),
+ invalidationQueue |-> {}
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "DatabaseRespondWithMetadata",
+   location |-> "line 84, col 5 to line 90, col 53 of module facebookcacheinvalidation"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ cacheFillStates |-> (k1 :> [version |-> 0, state |-> "respondedtometadata"]),
+ cacheVersions |-> (k1 :> [type |-> "miss"]),
+ counter |-> 0,
+ database |-> (k1 :> 0),
+ invalidationQueue |-> {}
+],
+[
+ _TEAction |-> [
+   position |-> 4,
+   name |-> "CacheFillMetadata",
+   location |-> "line 95, col 5 to line 109, col 72 of module facebookcacheinvalidation"
+ ],
+ cache |-> (k1 :> [version |-> 0, type |-> "hit"]),
+ cacheFillStates |-> (k1 :> [version |-> 0, state |-> "inactive"]),
+ cacheVersions |-> (k1 :> [type |-> "miss"]),
+ counter |-> 0,
+ database |-> (k1 :> 0),
+ invalidationQueue |-> {}
+],
+[
+ _TEAction |-> [
+   position |-> 5,
+   name |-> "DatabaseUpdate",
+   location |-> "line 66, col 5 to line 72, col 67 of module facebookcacheinvalidation"
+ ],
+ cache |-> (k1 :> [version |-> 0, type |-> "hit"]),
+ cacheFillStates |-> (k1 :> [version |-> 0, state |-> "inactive"]),
+ cacheVersions |-> (k1 :> [type |-> "miss"]),
+ counter |-> 0,
+ database |-> (k1 :> 1),
+ invalidationQueue |-> {[key |-> k1, version |-> 1]}
+],
+[
+ _TEAction |-> [
+   position |-> 6,
+   name |-> "CacheStartFillVersion",
+   location |-> "line 114, col 5 to line 118, col 53 of module facebookcacheinvalidation"
+ ],
+ cache |-> (k1 :> [version |-> 0, type |-> "hit"]),
+ cacheFillStates |-> (k1 :> [version |-> 0, state |-> "startfillversion"]),
+ cacheVersions |-> (k1 :> [type |-> "miss"]),
+ counter |-> 0,
+ database |-> (k1 :> 1),
+ invalidationQueue |-> {[key |-> k1, version |-> 1]}
+],
+[
+ _TEAction |-> [
+   position |-> 7,
+   name |-> "DatabaseRespondWithVersion",
+   location |-> "line 121, col 5 to line 127, col 53 of module facebookcacheinvalidation"
+ ],
+ cache |-> (k1 :> [version |-> 0, type |-> "hit"]),
+ cacheFillStates |-> (k1 :> [version |-> 1, state |-> "respondedtoversion"]),
+ cacheVersions |-> (k1 :> [type |-> "miss"]),
+ counter |-> 0,
+ database |-> (k1 :> 1),
+ invalidationQueue |-> {[key |-> k1, version |-> 1]}
+],
+[
+ _TEAction |-> [
+   position |-> 8,
+   name |-> "CacheFillVersion",
+   location |-> "line 132, col 5 to line 151, col 64 of module facebookcacheinvalidation"
+ ],
+ cache |-> (k1 :> [version |-> 0, type |-> "hit"]),
+ cacheFillStates |-> (k1 :> [version |-> 1, state |-> "inactive"]),
+ cacheVersions |-> (k1 :> [version |-> 1, type |-> "hit"]),
+ counter |-> 0,
+ database |-> (k1 :> 1),
+ invalidationQueue |-> {[key |-> k1, version |-> 1]}
+],
+[
+ _TEAction |-> [
+   position |-> 9,
+   name |-> "FailUpdateInvalidationMessageIgnore",
+   location |-> "line 243, col 5 to line 250, col 54 of module facebookcacheinvalidation"
+ ],
+ cache |-> (k1 :> [version |-> 0, type |-> "hit"]),
+ cacheFillStates |-> (k1 :> [version |-> 1, state |-> "inactive"]),
+ cacheVersions |-> (k1 :> [version |-> 1, type |-> "hit"]),
+ counter |-> 1,
+ database |-> (k1 :> 1),
+ invalidationQueue |-> {}
+]
+>>

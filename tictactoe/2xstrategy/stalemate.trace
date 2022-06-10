@@ -1,0 +1,92 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ board |-> <<<<"_", "_", "_">>, <<"_", "_", "_">>, <<"_", "_", "_">>>>,
+ nextTurn |-> "X"
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "MoveX",
+   location |-> "line 130, col 5 to line 149, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "_", "_">>, <<"_", "_", "_">>, <<"_", "_", "_">>>>,
+ nextTurn |-> "O"
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "MoveO",
+   location |-> "line 51, col 5 to line 54, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "O", "_">>, <<"_", "_", "_">>, <<"_", "_", "_">>>>,
+ nextTurn |-> "X"
+],
+[
+ _TEAction |-> [
+   position |-> 4,
+   name |-> "MoveX",
+   location |-> "line 130, col 5 to line 149, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "O", "_">>, <<"_", "X", "_">>, <<"_", "_", "_">>>>,
+ nextTurn |-> "O"
+],
+[
+ _TEAction |-> [
+   position |-> 5,
+   name |-> "MoveO",
+   location |-> "line 51, col 5 to line 54, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "O", "_">>, <<"_", "X", "_">>, <<"_", "_", "O">>>>,
+ nextTurn |-> "X"
+],
+[
+ _TEAction |-> [
+   position |-> 6,
+   name |-> "MoveX",
+   location |-> "line 130, col 5 to line 149, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "O", "_">>, <<"_", "X", "X">>, <<"_", "_", "O">>>>,
+ nextTurn |-> "O"
+],
+[
+ _TEAction |-> [
+   position |-> 7,
+   name |-> "MoveO",
+   location |-> "line 51, col 5 to line 54, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "O", "_">>, <<"O", "X", "X">>, <<"_", "_", "O">>>>,
+ nextTurn |-> "X"
+],
+[
+ _TEAction |-> [
+   position |-> 8,
+   name |-> "MoveX",
+   location |-> "line 130, col 5 to line 149, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "O", "X">>, <<"O", "X", "X">>, <<"_", "_", "O">>>>,
+ nextTurn |-> "O"
+],
+[
+ _TEAction |-> [
+   position |-> 9,
+   name |-> "MoveO",
+   location |-> "line 51, col 5 to line 54, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "O", "X">>, <<"O", "X", "X">>, <<"O", "_", "O">>>>,
+ nextTurn |-> "X"
+],
+[
+ _TEAction |-> [
+   position |-> 10,
+   name |-> "MoveX",
+   location |-> "line 130, col 5 to line 149, col 22 of module tictactoexstrat"
+ ],
+ board |-> <<<<"X", "O", "X">>, <<"O", "X", "X">>, <<"O", "X", "O">>>>,
+ nextTurn |-> "O"
+]
+>>

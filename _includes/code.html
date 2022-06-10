@@ -1,0 +1,82 @@
+{% assign namespace = include.path | replace: "/" "" %}
+|<a href="#{{namespace}}-end">Next Section</a> | <a href="{{include.path}}.tla">Download Code</a> | <a href="{{include.path}}.pdf">Download PDF</a> |
+
+
+<div style="text-align: center;">
+    <a id="{{namespace}}-code-btn" class="btn mr-2 disabled" onclick="showCode{{namespace}}()">Show Code</a>
+    <a id="{{namespace}}-latex-btn" class="btn btn-blue" onclick="showLatex{{namespace}}()">Show LaTex</a>
+</div>
+
+{% assign displayPath = include.path %}
+{% if include.snippet %}{% assign displayPath = include.snippet %}{% endif %}
+<div id="{{namespace}}-code">
+{% highlight tla %}
+{% include_relative {{displayPath}}.tla %}
+{% endhighlight %}
+</div>
+
+
+<div id="{{namespace}}-latex" style="display: none; padding-top: 20px;" class="latex">
+    {% include_relative {{displayPath}}.svg %}
+</div>
+
+<div id="{{namespace}}-end">
+
+</div>
+
+<script>
+
+function showCode{{namespace}}() {
+    setCookie{{namespace}}("code");
+}
+
+function showLatex{{namespace}}(){
+    setCookie{{namespace}}("latex");
+}
+
+function setCookie{{namespace}}(type){
+    document.cookie = "codedisplay=" + type + ";SameSite=Lax; path=/";
+    refresh{{namespace}}();
+}
+
+function parseCookie(){
+    if(document.cookie == ""){
+        setCookie{{namespace}}("code")
+    }
+
+    return document.cookie.split(';')[0].replace("codedisplay=", "")
+}
+
+
+function refresh{{namespace}}(){
+    base = "{{namespace}}-";
+    code = document.getElementById(base + "code");
+    codeBtn = document.getElementById(base + "code-btn");
+    latex = document.getElementById(base + "latex");
+    latexBtn = document.getElementById(base + "latex-btn");
+
+    if (parseCookie() == "code"){
+        code.style.display = '';
+        latex.style.display = 'none';
+        codeBtn.classList.add('disabled');
+        codeBtn.classList.remove('btn-blue');
+        latexBtn.classList.remove('disabled');
+        latexBtn.classList.add('btn-blue');
+    }
+    else {
+        code.style.display = 'none';
+        latex.style.display = '';
+
+        codeBtn.classList.remove('disabled');
+        codeBtn.classList.add('btn-blue');
+
+        latexBtn.classList.add('disabled');
+        latexBtn.classList.remove('btn-blue');
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    refresh{{namespace}}();
+});
+
+</script>

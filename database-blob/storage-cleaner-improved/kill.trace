@@ -1,0 +1,481 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui2 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> "UNSET", imageId |-> "UNSET"]),
+ operations |-> <<>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 0
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "TimePasses",
+   location |-> "line 127, col 5 to line 128, col 91 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui2 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> "UNSET", imageId |-> "UNSET"]),
+ operations |-> <<>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 1
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "ServerStartWrite",
+   location |-> "line 155, col 5 to line 174, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui2 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> "UNSET", imageId |-> "UNSET"]),
+ operations |-> <<[metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> m1,
+        imageId |-> "UNSET",
+        image |-> i1,
+        state |-> "started_write",
+        userId |-> u1,
+        start |-> 1 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 1
+],
+[
+ _TEAction |-> [
+   position |-> 4,
+   name |-> "ServerWriteBlob",
+   location |-> "line 179, col 5 to line 199, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> "UNSET", imageId |-> "UNSET"]),
+ operations |-> <<[metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> m1,
+        imageId |-> ui1,
+        image |-> i1,
+        state |-> "wrote_blob",
+        userId |-> u1,
+        start |-> 1 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 1
+],
+[
+ _TEAction |-> [
+   position |-> 5,
+   name |-> "ServerWriteMetadataAndReturn",
+   location |-> "line 205, col 5 to line 221, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui1]),
+ operations |-> <<[metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 1 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 1
+],
+[
+ _TEAction |-> [
+   position |-> 6,
+   name |-> "TimePasses",
+   location |-> "line 127, col 5 to line 128, col 91 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui1]),
+ operations |-> <<[metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 1 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 2
+],
+[
+ _TEAction |-> [
+   position |-> 7,
+   name |-> "TimePasses",
+   location |-> "line 127, col 5 to line 128, col 91 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui1]),
+ operations |-> <<[metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 1 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 8,
+   name |-> "ServerStartWrite",
+   location |-> "line 155, col 5 to line 174, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui1]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> m1,
+        imageId |-> "UNSET",
+        image |-> i1,
+        state |-> "started_write",
+        userId |-> u1,
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 9,
+   name |-> "ServerWriteBlob",
+   location |-> "line 179, col 5 to line 199, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> i1, created |-> 3] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui1]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> m1,
+        imageId |-> ui2,
+        image |-> i1,
+        state |-> "wrote_blob",
+        userId |-> u1,
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 0 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 10,
+   name |-> "ServerStartRead",
+   location |-> "line 245, col 5 to line 257, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> i1, created |-> 3] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui1]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> m1,
+        imageId |-> ui2,
+        image |-> i1,
+        state |-> "wrote_blob",
+        userId |-> u1,
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "started_read",
+        userId |-> u1,
+        start |-> 3 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 11,
+   name |-> "ServerReadMetadata",
+   location |-> "line 263, col 5 to line 276, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> i1, created |-> 3] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui1]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> m1,
+        imageId |-> ui2,
+        image |-> i1,
+        state |-> "wrote_blob",
+        userId |-> u1,
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> m1,
+        imageId |-> ui1,
+        image |-> "UNSET",
+        state |-> "read_metadata",
+        userId |-> u1,
+        start |-> 3 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 12,
+   name |-> "ServerWriteMetadataAndReturn",
+   location |-> "line 205, col 5 to line 221, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> i1, created |-> 3] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui2]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> m1,
+        imageId |-> ui1,
+        image |-> "UNSET",
+        state |-> "read_metadata",
+        userId |-> u1,
+        start |-> 3 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 13,
+   name |-> "CleanerStartGetBlobKeys",
+   location |-> "line 343, col 5 to line 360, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> i1, created |-> 3] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "got_blob_keys", blobKeys |-> {ui1}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui2]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> m1,
+        imageId |-> ui1,
+        image |-> "UNSET",
+        state |-> "read_metadata",
+        userId |-> u1,
+        start |-> 3 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 14,
+   name |-> "CleanerGetUnusedKeys",
+   location |-> "line 364, col 5 to line 374, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> i1, created |-> 1] @@
+  ui2 :> [image |-> i1, created |-> 3] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :>
+      [ state |-> "got_unused_keys",
+        blobKeys |-> {ui1},
+        unusedBlobKeys |-> {ui1} ] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui2]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> m1,
+        imageId |-> ui1,
+        image |-> "UNSET",
+        state |-> "read_metadata",
+        userId |-> u1,
+        start |-> 3 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 15,
+   name |-> "CleanerDeletingKeys",
+   location |-> "line 378, col 5 to line 389, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui2 :> [image |-> i1, created |-> 3] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :>
+      [state |-> "got_unused_keys", blobKeys |-> {ui1}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui2]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> m1,
+        imageId |-> ui1,
+        image |-> "UNSET",
+        state |-> "read_metadata",
+        userId |-> u1,
+        start |-> 3 ] ),
+ time |-> 3
+],
+[
+ _TEAction |-> [
+   position |-> 16,
+   name |-> "ServerReadBlobAndReturn",
+   location |-> "line 310, col 5 to line 332, col 21 of module storagecleaner"
+ ],
+ blobStoreState |-> ( ui1 :> [image |-> "UNSET", status |-> "UNSET"] @@
+  ui2 :> [image |-> i1, created |-> 3] @@
+  ui3 :> [image |-> "UNSET", status |-> "UNSET"] ),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :>
+      [state |-> "got_unused_keys", blobKeys |-> {ui1}, unusedBlobKeys |-> {}] ),
+ databaseState |-> (u1 :> [metadata |-> m1, imageId |-> ui2]),
+ operations |-> << [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> i1, userId |-> u1, type |-> "WRITE"],
+   [metadata |-> m1, image |-> "UNSET", userId |-> u1, type |-> "READ"] >>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 3 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        image |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        start |-> 3 ] ),
+ time |-> 3
+]
+>>

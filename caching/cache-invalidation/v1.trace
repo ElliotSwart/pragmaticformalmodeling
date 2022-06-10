@@ -1,0 +1,68 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ cacheFillStates |-> (k1 :> [state |-> "inactive", version |-> 0]),
+ database |-> (k1 :> 0),
+ invalidationQueue |-> {}
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "CacheStartReadThroughFill",
+   location |-> "line 60, col 5 to line 64, col 55 of module cacheinvalidationv1"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ cacheFillStates |-> (k1 :> [state |-> "started", version |-> 0]),
+ database |-> (k1 :> 0),
+ invalidationQueue |-> {}
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "DatabaseRespondToCacheFill",
+   location |-> "line 68, col 5 to line 73, col 55 of module cacheinvalidationv1"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ cacheFillStates |-> (k1 :> [state |-> "respondedto", version |-> 0]),
+ database |-> (k1 :> 0),
+ invalidationQueue |-> {}
+],
+[
+ _TEAction |-> [
+   position |-> 4,
+   name |-> "DatabaseUpdate",
+   location |-> "line 49, col 5 to line 55, col 43 of module cacheinvalidationv1"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ cacheFillStates |-> (k1 :> [state |-> "respondedto", version |-> 0]),
+ database |-> (k1 :> 1),
+ invalidationQueue |-> {[key |-> k1]}
+],
+[
+ _TEAction |-> [
+   position |-> 5,
+   name |-> "CacheHandleInvalidationMessage",
+   location |-> "line 106, col 5 to line 111, col 46 of module cacheinvalidationv1"
+ ],
+ cache |-> (k1 :> [type |-> "miss"]),
+ cacheFillStates |-> (k1 :> [state |-> "respondedto", version |-> 0]),
+ database |-> (k1 :> 1),
+ invalidationQueue |-> {}
+],
+[
+ _TEAction |-> [
+   position |-> 6,
+   name |-> "CacheCompleteFill",
+   location |-> "line 77, col 5 to line 90, col 48 of module cacheinvalidationv1"
+ ],
+ cache |-> (k1 :> [version |-> 0, type |-> "hit"]),
+ cacheFillStates |-> (k1 :> [state |-> "inactive", version |-> 0]),
+ database |-> (k1 :> 1),
+ invalidationQueue |-> {}
+]
+>>

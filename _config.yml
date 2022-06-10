@@ -1,0 +1,72 @@
+theme: just-the-docs
+search_enabled: false
+title: Pragmatic Formal Modeling
+
+kramdown:
+  plantuml:
+    theme:
+      name: plain
+
+color_scheme: standard
+
+author:
+  name: Elliot Swart
+  url: https://www.linkedin.com/in/elliotswart/
+
+aux_links:
+  "GitHub Repository":
+    - "https://github.com/ElliotSwart/pragmaticformalmodeling"
+  "About the Author":
+    - "https://www.linkedin.com/in/elliotswart/"
+
+aux_links_new_tab: true
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: "Copyright &copy; 2022 Elliot Swart. Distributed by an <a href=\"https://github.com/ElliotSwart/pragmaticformalmodeling/blob/main/LICENSE.md\">MIT license.</a> "
+
+plugins:
+  - jekyll-seo-tag
+
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/ElliotSwart/pragmaticformalmodeling" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+# gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+exclude:
+  - "*/states"
+  - "*.toolbox"
+  - "_tools"
+  - "*.aux"
+  - "*.log"
+  - "*.dvi"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "LICENSE.md"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: 
+        path: /logo.png
+        alt: Temporal Logic Symbol for Eventually
+        height: 150
+        width: 150
+
+  - scope:
+      path: caching
+    values:
+      description: An accessible deep dive into cache invalidation, going from theory to progressively refined and tested formal models. Learn how to catch cache invalidation design flaws early, and not in production.
+  - scope:
+      path: business-logic
+    values:
+      description: Trace software requirements into a formal mathematical specification. Use it to verify multiple implementations
+  - scope:
+      path: database-blob
+    values: 
+      description: Use formal modeling to reduce errors in a simple and common distributed system.

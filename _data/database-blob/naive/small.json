@@ -1,0 +1,197 @@
+[
+    {
+        "no": 1,
+        "name": "Initial predicate",
+        "state": {
+            "blobStoreState": {
+                "u1": "UNSET"
+            },
+            "databaseState": {
+                "u1": "UNSET"
+            },
+            "operations": [],
+            "serverStates": {
+                "s1": {
+                    "state": "waiting",
+                    "userId": "UNSET",
+                    "metadata": "UNSET",
+                    "image": "UNSET"
+                }
+            }
+        }
+    },
+    {
+        "no": 2,
+        "name": "StartWrite",
+        "state": {
+            "blobStoreState": {
+                "u1": "UNSET"
+            },
+            "databaseState": {
+                "u1": "UNSET"
+            },
+            "operations": [
+                {
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "i1",
+                    "type": "WRITE"
+                }
+            ],
+            "serverStates": {
+                "s1": {
+                    "state": "started_write",
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "i1"
+                }
+            }
+        }
+    },
+    {
+        "no": 3,
+        "name": "WriteMetadata",
+        "state": {
+            "blobStoreState": {
+                "u1": "UNSET"
+            },
+            "databaseState": {
+                "u1": "m1"
+            },
+            "operations": [
+                {
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "i1",
+                    "type": "WRITE"
+                }
+            ],
+            "serverStates": {
+                "s1": {
+                    "state": "wrote_metadata",
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "i1"
+                }
+            }
+        }
+    },
+    {
+        "no": 4,
+        "name": "FailWrite",
+        "state": {
+            "blobStoreState": {
+                "u1": "UNSET"
+            },
+            "databaseState": {
+                "u1": "m1"
+            },
+            "operations": [
+                {
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "i1",
+                    "type": "WRITE"
+                }
+            ],
+            "serverStates": {
+                "s1": {
+                    "state": "waiting",
+                    "userId": "UNSET",
+                    "metadata": "UNSET",
+                    "image": "UNSET"
+                }
+            }
+        }
+    },
+    {
+        "no": 5,
+        "name": "StartRead",
+        "state": {
+            "blobStoreState": {
+                "u1": "UNSET"
+            },
+            "databaseState": {
+                "u1": "m1"
+            },
+            "operations": [
+                {
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "i1",
+                    "type": "WRITE"
+                }
+            ],
+            "serverStates": {
+                "s1": {
+                    "state": "started_read",
+                    "userId": "u1",
+                    "metadata": "UNSET",
+                    "image": "UNSET"
+                }
+            }
+        }
+    },
+    {
+        "no": 6,
+        "name": "ReadMetadata",
+        "state": {
+            "blobStoreState": {
+                "u1": "UNSET"
+            },
+            "databaseState": {
+                "u1": "m1"
+            },
+            "operations": [
+                {
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "i1",
+                    "type": "WRITE"
+                }
+            ],
+            "serverStates": {
+                "s1": {
+                    "state": "read_metadata",
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "UNSET"
+                }
+            }
+        }
+    },
+    {
+        "no": 7,
+        "name": "ReadBlobAndReturn",
+        "state": {
+            "blobStoreState": {
+                "u1": "UNSET"
+            },
+            "databaseState": {
+                "u1": "m1"
+            },
+            "operations": [
+                {
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "i1",
+                    "type": "WRITE"
+                },
+                {
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "UNSET",
+                    "type": "READ"
+                }
+            ],
+            "serverStates": {
+                "s1": {
+                    "state": "waiting",
+                    "userId": "u1",
+                    "metadata": "m1",
+                    "image": "UNSET"
+                }
+            }
+        }
+    }
+]
