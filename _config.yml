@@ -1,6 +1,12 @@
+remote_theme: just-the-docs/just-the-docs
 theme: just-the-docs
 search_enabled: false
 title: Pragmatic Formal Modeling
+
+baseurl: /pragmaticformalmodeling
+url: https://elliotswart.github.io
+domain: elliotswart.github.io
+
 
 kramdown:
   plantuml:
@@ -20,6 +26,7 @@ aux_links:
     - "https://www.linkedin.com/in/elliotswart/"
 
 aux_links_new_tab: true
+
 
 back_to_top: true
 back_to_top_text: "Back to top"
@@ -47,6 +54,9 @@ exclude:
   - "Gemfile.lock"
   - "README.md"
   - "LICENSE.md"
+  - /.bundle/
+  - /vendor/bundle
+  - /lib/bundler/man/
 
 defaults:
   - scope:

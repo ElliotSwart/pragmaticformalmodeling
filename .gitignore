@@ -9,3 +9,6 @@ _tools/
 *.aux
 .sass-cache/
 .jekyll-metadata
+/.bundle/
+/vendor/bundle
+/lib/bundler/man/

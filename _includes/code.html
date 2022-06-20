@@ -39,12 +39,14 @@ function setCookie{{namespace}}(type){
     refresh{{namespace}}();
 }
 
-function parseCookie(){
+function parseCookie() {
     if(document.cookie == ""){
-        setCookie{{namespace}}("code")
+        setCookie{{namespace}}("code");
     }
 
-    return document.cookie.split(';')[0].replace("codedisplay=", "")
+    return document.cookie.split('; ')
+        .find(row => row.startsWith('codedisplay='))
+        ?.split('=')[1];
 }
 
 
@@ -55,7 +57,9 @@ function refresh{{namespace}}(){
     latex = document.getElementById(base + "latex");
     latexBtn = document.getElementById(base + "latex-btn");
 
-    if (parseCookie() == "code"){
+    display = parseCookie();
+
+    if (display == "code"){
         code.style.display = '';
         latex.style.display = 'none';
         codeBtn.classList.add('disabled');
