@@ -1,0 +1,1 @@
+[{"no":1,"name":"Initial predicate","state":{"cache":{"k1":{"type":"miss"}},"database":{"k1":0}}},{"no":2,"name":"CacheReadThrough","state":{"cache":{"k1":{"type":"hit","version":0}},"database":{"k1":0}}},{"no":3,"name":"DatabaseUpdate","state":{"cache":{"k1":{"type":"hit","version":0}},"database":{"k1":1}}}]

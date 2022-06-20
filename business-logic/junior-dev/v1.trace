@@ -1,0 +1,50 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> FALSE,
+              inTrial |-> FALSE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0 ] ),
+  billQueue |-> <<>> ],
+ events |-> <<>>,
+ month |-> 0
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "StartTrial",
+   location |-> "line 30, col 1 to line 30, col 15 of module spec"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> FALSE,
+              inTrial |-> TRUE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0 ] ),
+  billQueue |-> <<>> ],
+ events |-> <<[user |-> u1, type |-> "starttrial"]>>,
+ month |-> 0
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "MonthPasses",
+   location |-> "line 30, col 1 to line 30, col 15 of module spec"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> FALSE,
+              inTrial |-> TRUE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0 ] ),
+  billQueue |-> <<>> ],
+ events |-> <<[user |-> u1, type |-> "starttrial"], [type |-> "monthpass"]>>,
+ month |-> 1
+]
+>>

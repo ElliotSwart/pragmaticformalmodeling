@@ -1,0 +1,80 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ blobStoreState |-> (i1 :> "UNSET" @@ i2 :> "UNSET"),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> ( ui1 :> [metadata |-> "UNSET", imageId |-> "UNSET"] @@
+  ui2 :> [metadata |-> "UNSET", imageId |-> "UNSET"] @@
+  ui3 :> [metadata |-> "UNSET", imageId |-> "UNSET"] ),
+ operations |-> <<>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        image |-> "UNSET" ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        image |-> "UNSET" ] )
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "ServerStartWrite",
+   location |-> "line 138, col 5 to line 155, col 65 of module storagecleanernaive"
+ ],
+ blobStoreState |-> (i1 :> "UNSET" @@ i2 :> "UNSET"),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> ( ui1 :> [metadata |-> "UNSET", imageId |-> "UNSET"] @@
+  ui2 :> [metadata |-> "UNSET", imageId |-> "UNSET"] @@
+  ui3 :> [metadata |-> "UNSET", imageId |-> "UNSET"] ),
+ operations |-> <<[metadata |-> m1, userId |-> ui1, image |-> u1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> m1,
+        imageId |-> "UNSET",
+        state |-> "started_write",
+        userId |-> ui1,
+        image |-> u1 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        image |-> "UNSET" ] )
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "ServerWriteBlob",
+   location |-> "line 161, col 5 to line 176, col 28 of module storagecleanernaive"
+ ],
+ blobStoreState |-> (i1 :> u1 @@ i2 :> "UNSET"),
+ cleanerStates |-> ( c1 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] @@
+  c2 :> [state |-> "waiting", blobKeys |-> {}, unusedBlobKeys |-> {}] ),
+ databaseState |-> ( ui1 :> [metadata |-> "UNSET", imageId |-> "UNSET"] @@
+  ui2 :> [metadata |-> "UNSET", imageId |-> "UNSET"] @@
+  ui3 :> [metadata |-> "UNSET", imageId |-> "UNSET"] ),
+ operations |-> <<[metadata |-> m1, userId |-> ui1, image |-> u1, type |-> "WRITE"]>>,
+ serverStates |-> ( s1 :>
+      [ metadata |-> m1,
+        imageId |-> i1,
+        state |-> "wrote_blob",
+        userId |-> ui1,
+        image |-> u1 ] @@
+  s2 :>
+      [ metadata |-> "UNSET",
+        imageId |-> "UNSET",
+        state |-> "waiting",
+        userId |-> "UNSET",
+        image |-> "UNSET" ] )
+]
+>>

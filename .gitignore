@@ -1,0 +1,11 @@
+states/
+*.toolbox/
+.jekyll-cache
+_site/
+database-blob/naivedbblob.toolbox/.project
+_tools/
+*.log
+*.out
+*.aux
+.sass-cache/
+.jekyll-metadata

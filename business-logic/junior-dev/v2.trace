@@ -1,0 +1,125 @@
+<<
+[
+ _TEAction |-> [
+   position |-> 1,
+   name |-> "Initial predicate",
+   location |-> "Unknown location"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> FALSE,
+              inTrial |-> FALSE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0,
+              hasHadTrialOrSubscription |-> FALSE,
+              hasCancelled |-> FALSE,
+              cancelMonth |-> 0 ] ),
+  billQueue |-> <<>> ],
+ events |-> <<>>,
+ month |-> 0
+],
+[
+ _TEAction |-> [
+   position |-> 2,
+   name |-> "StartSubscription",
+   location |-> "line 30, col 1 to line 30, col 17 of module spec"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> TRUE,
+              inTrial |-> FALSE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0,
+              hasHadTrialOrSubscription |-> TRUE,
+              hasCancelled |-> FALSE,
+              cancelMonth |-> 0 ] ),
+  billQueue |-> <<>> ],
+ events |-> <<[user |-> u1, type |-> "startsubscription"]>>,
+ month |-> 0
+],
+[
+ _TEAction |-> [
+   position |-> 3,
+   name |-> "MonthPasses",
+   location |-> "line 30, col 1 to line 30, col 17 of module spec"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> TRUE,
+              inTrial |-> FALSE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0,
+              hasHadTrialOrSubscription |-> TRUE,
+              hasCancelled |-> FALSE,
+              cancelMonth |-> 0 ] ),
+  billQueue |-> <<>> ],
+ events |-> <<[user |-> u1, type |-> "startsubscription"], [type |-> "monthpass"]>>,
+ month |-> 1
+],
+[
+ _TEAction |-> [
+   position |-> 4,
+   name |-> "CancelSubscription",
+   location |-> "line 30, col 1 to line 30, col 17 of module spec"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> FALSE,
+              inTrial |-> FALSE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0,
+              hasHadTrialOrSubscription |-> TRUE,
+              hasCancelled |-> TRUE,
+              cancelMonth |-> 1 ] ),
+  billQueue |-> <<[user |-> u1, fee |-> CancellationFee]>> ],
+ events |-> << [user |-> u1, type |-> "startsubscription"],
+   [type |-> "monthpass"],
+   [user |-> u1, type |-> "cancelsubscription"] >>,
+ month |-> 1
+],
+[
+ _TEAction |-> [
+   position |-> 5,
+   name |-> "ProcessBills",
+   location |-> "line 30, col 1 to line 30, col 17 of module spec"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> FALSE,
+              inTrial |-> FALSE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0,
+              hasHadTrialOrSubscription |-> TRUE,
+              hasCancelled |-> TRUE,
+              cancelMonth |-> 1 ] ),
+  billQueue |-> <<>> ],
+ events |-> << [user |-> u1, type |-> "startsubscription"],
+   [type |-> "monthpass"],
+   [user |-> u1, type |-> "cancelsubscription"],
+   [user |-> u1, fee |-> CancellationFee, type |-> "bill"] >>,
+ month |-> 1
+],
+[
+ _TEAction |-> [
+   position |-> 6,
+   name |-> "MonthPasses",
+   location |-> "line 30, col 1 to line 30, col 17 of module spec"
+ ],
+ database |-> [ users |->
+      ( u1 :>
+            [ subscribed |-> FALSE,
+              inTrial |-> FALSE,
+              trialStartTime |-> 0,
+              billedForMonth |-> 0,
+              hasHadTrialOrSubscription |-> TRUE,
+              hasCancelled |-> TRUE,
+              cancelMonth |-> 1 ] ),
+  billQueue |-> <<>> ],
+ events |-> << [user |-> u1, type |-> "startsubscription"],
+   [type |-> "monthpass"],
+   [user |-> u1, type |-> "cancelsubscription"],
+   [user |-> u1, fee |-> CancellationFee, type |-> "bill"],
+   [type |-> "monthpass"] >>,
+ month |-> 2
+]
+>>
