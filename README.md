@@ -1,5 +1,5 @@
 # Pragmatic Formal Modeling
-## Getting Start
+## Getting Started
 To test:
 ```
 bundle install
