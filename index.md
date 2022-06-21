@@ -117,7 +117,7 @@ Essentially, this model describes every game of Tic-Tac-Toe that could be played
 
 {% include states.md states=page.fullstate namespace="fullstate" modelcfg="tictactoe/1everygame/tictactoe-full.cfg" %} 
 
-It ends when there are no more spaces left to fill. None of the Next actions are activated, so the system "deadlocks". Sometimes this behavior is an error, but for us it's a feature. You can configure how to treat it.
+It ends when there are no more spaces left to fill. None of the Next actions are activated, so the system "deadlocks." Sometimes this behavior is an error, but for us it's a feature. You can configure how to treat it.
 
 ### Checking the Model
 
@@ -125,7 +125,7 @@ All right, that's kind of cool, but so what? Say that it would be really bad if 
 
 {% include trace.html traceconfig=page.owin constraint="Oh no, it is possible for **O** to win. Invariant OHasNotWon is violated." trace=site.data.tictactoe.1everygame.owin modelcfg="tictactoe/1everygame/tictactoe-owin.cfg" %}
 
-Now the interesting thing is not that **O** can win Tic-Tac-Toe. We probably knew that. But the model checker uses Breadth-First-Search, so not only is this a possible **O** victory, there are no faster victories. What's also interesting is how clearly it is presented. The data above is EXACTLY what comes out of the model checker, prettied up with generic css and a bit of annotation. Look how much clearer it is than standard a code debugger. Because we're not debugging code, we're debugging logic.
+Now the interesting thing is not that **O** can win Tic-Tac-Toe. We probably knew that. But the model checker uses Breadth-First-Search, so not only is this a possible **O** victory, there are no faster victories. What's also interesting is how clearly it is presented. The data above is EXACTLY what comes out of the model checker, prettied up with generic css and a bit of annotation. Look how much clearer it is than a standard code debugger. Because we're not debugging code, we're debugging logic.
 
 Let's see what happens when **X** wins.
 
