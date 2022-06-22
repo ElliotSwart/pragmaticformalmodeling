@@ -486,7 +486,15 @@ NoOrphanFiles ==
 (* doesn't go on forever                                                   *)
 (***************************************************************************)
 
-EventuallyNoOrphanFiles == []<>NoOrphanFiles
+
+\* At some point in the future there will be no orphan files
+\* If it's true ever, it is True
+EventuallyNoOrphanFiles == <>NoOrphanFiles
+
+\* Always, at some point in the future, there will be no orphan files
+\* This is how we test eventual consistency. It can't just happen once
+\* It must always happen
+AlwaysEventuallyNoOrphanFiles == []EventuallyNoOrphanFiles
 
 StopAfter3Operations ==
     /\ Len(operations) <= 3
