@@ -592,5 +592,11 @@
     "content": ". | Favicon: Diamond icons created by Vaadin - Flaticon. | . ",
     "url": "https://elliotswart.github.io/pragmaticformalmodeling/tools/#assets",
     "relUrl": "/tools/#assets"
+  },"99": {
+    "doc": "Tools and Additional Citations",
+    "title": "Acknowledgments",
+    "content": ". | To Liza Knipscher for editing and proofreading tons of text and code. | To all the people who wrote the learning material and the tools above, your work was invaluable to the completion of this project. | . ",
+    "url": "https://elliotswart.github.io/pragmaticformalmodeling/tools/#acknowledgments",
+    "relUrl": "/tools/#acknowledgments"
   }
 }
