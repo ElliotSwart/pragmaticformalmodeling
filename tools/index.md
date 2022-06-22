@@ -28,8 +28,6 @@ nav_order: 10
 - [Favicon](https://www.flaticon.com/free-icons/diamond): Diamond icons created by Vaadin - Flaticon.
 
 
-
-
-
-
-
+## Acknowledgments
+- To [Liza Knipscher](https://github.com/knipscher) for editing and proofreading tons of text and code.
+- To all the people who wrote the [learning material](../learning-material) and the tools above, your work was invaluable to the completion of this project.
